@@ -12,8 +12,8 @@ class BlogController extends Controller
 {
     
 	public function getIndex() {
-		$posts = Post::paginate(10);
-		return view ('blog.index')->withPost($posts);
+		$posts = Post::paginate(3);
+		return view('blog.index')->withPosts($posts);
 	}
 
     public function getSingle($slug){
