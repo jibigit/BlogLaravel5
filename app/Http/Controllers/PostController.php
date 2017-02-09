@@ -11,6 +11,10 @@ use Session;
 
 class PostController extends Controller
 {
+
+      public function __construct(){
+                $this->middleware('auth');
+            }
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +22,8 @@ class PostController extends Controller
      */
     public function index()
     {
+
+
         // create variable and store all the blog posts in it from the database
 
         $posts = Post::orderBy('id', 'desc')-> paginate(5);  // Je veux afficher les post par liste de 5 ( cf index, function render)
